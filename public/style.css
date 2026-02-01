@@ -1,3 +1,16 @@
+:root {
+  --accent: rgb(86, 156, 214);
+  --accent-light: #e8f4fd;
+  --accent-hover: rgb(70, 140, 198);
+  --text-primary: #333;
+  --text-secondary: #666;
+  --text-tertiary: #777;
+  --bg-primary: #f4f4f4;
+  --bg-secondary: #e0e0e0;
+  --bg-neutral: #f5f5f5;
+  --border-color: #ddd;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -7,14 +20,14 @@
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
-  color: #333;
+  color: var(--text-primary);
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
 }
 
 header {
-  background: rgb(86, 156, 214);
+  background: var(--accent);
   color: white;
   padding: 1rem;
   margin-bottom: 2rem;
@@ -58,31 +71,31 @@ main {
 .tutorial-list li {
   padding: 0.75rem;
   margin-bottom: 0.5rem;
-  background: #f4f4f4;
+  background: var(--bg-primary);
   border-radius: 5px;
 }
 
 .tutorial-list li a {
-  color: #333;
+  color: var(--text-primary);
   text-decoration: none;
   font-weight: bold;
   display: block;
 }
 
 .tutorial-list li a strong {
-  color: rgb(86, 156, 214);
+  color: var(--accent);
   font-size: 1.1rem;
 }
 
 .tutorial-list li p {
   margin: 0.5rem 0 0 0;
   font-size: 0.9rem;
-  color: #666;
+  color: var(--text-secondary);
   font-weight: normal;
 }
 
 .tutorial-list li:hover {
-  background: #e0e0e0;
+  background: var(--bg-secondary);
 }
 
 article {
@@ -91,7 +104,7 @@ article {
 
 article h2 {
   margin-bottom: 1rem;
-  color: rgb(86, 156, 214);
+  color: var(--accent);
 }
 
 article p {
@@ -108,7 +121,7 @@ article p {
 .category-tag {
   display: inline-block;
   padding: 0.4rem 0.8rem;
-  background: rgb(86, 156, 214);
+  background: var(--accent);
   color: white;
   border-radius: 4px;
   font-size: 0.9rem;
@@ -123,8 +136,8 @@ article p {
 .tutorial-tags .tag {
   display: inline-block;
   padding: 0.2rem 0.5rem;
-  background: #e8f4fd;
-  color: rgb(86, 156, 214);
+  background: var(--accent-light);
+  color: var(--accent);
   border-radius: 3px;
   font-size: 0.75rem;
   font-weight: normal;
@@ -133,8 +146,8 @@ article p {
 .tutorial-tags .dev-time-tag {
   display: inline-block;
   padding: 0.2rem 0.5rem;
-  background: #f5f5f5;
-  color: #666;
+  background: var(--bg-neutral);
+  color: var(--text-secondary);
   border-radius: 3px;
   font-size: 0.75rem;
   font-weight: normal;
@@ -144,7 +157,7 @@ article p {
 footer {
   margin-top: 2rem;
   padding-top: 1rem;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid var(--border-color);
   text-align: center;
-  color: #777;
+  color: var(--text-tertiary);
 }
