@@ -1,5 +1,8 @@
 # Hoja de ruta – tutoriales-web
 
+Tiempo total web: 
+
+
 ## Implementado
 - Estructura base del proyecto
 - Servidor estático con Node.js y Express

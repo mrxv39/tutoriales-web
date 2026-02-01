@@ -14,4 +14,6 @@ tutorial IA para programar
 
 Llevar un contador  de los tiempos que nos lleva diseñar toda la web y cada tutorial para que ellector sepa el tiempo que le hemos dedicado 
 
+Tutorial: tu propia web, hacer la web con mi hermana grabarlo y subirlo
+
 ## Sin procesar

@@ -24,20 +24,8 @@
     
     <section>
       <h2>Tutoriales Disponibles</h2>
-      <ul class="tutorial-list">
-        <!-- Tutorial block - copy this structure to add new tutorials -->
-        <li>
-          <a href="tutorial.html?slug=apps-productividad">
-            <strong>Aplicaciones de productividad que merece la pena aprender a usar</strong>
-          </a>
-          <div class="tutorial-tags">
-            <span class="tag">Productividad</span>
-            <span class="tag">Herramientas</span>
-          </div>
-          <p>Herramientas sencillas que marcan una diferencia real en el día a día: gestión de tareas, control del tiempo, capturas rápidas y más.</p>
-        </li>
-        
-        <!-- Add more tutorials here following the same pattern -->
+      <ul class="tutorial-list" id="tutorial-list">
+        <li>Cargando tutoriales...</li>
       </ul>
     </section>
   </main>
@@ -45,5 +33,41 @@
   <footer>
     <p>&copy; 2026 Tutoriales Web</p>
   </footer>
+
+  <script>
+    // Fetch and render tutorials from JSON manifest
+    fetch('/tutoriales/index.json')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('No se pudo cargar el listado de tutoriales');
+        }
+        return response.json();
+      })
+      .then(tutorials => {
+        const listElement = document.getElementById('tutorial-list');
+        
+        if (tutorials.length === 0) {
+          listElement.innerHTML = '<li>No hay tutoriales disponibles en este momento.</li>';
+          return;
+        }
+        
+        listElement.innerHTML = tutorials.map(tutorial => `
+          <li>
+            <a href="tutorial.html?slug=${tutorial.slug}">
+              <strong>${tutorial.title}</strong>
+            </a>
+            <div class="tutorial-tags">
+              ${tutorial.categories.map(cat => `<span class="tag">${cat}</span>`).join('')}
+            </div>
+            <p>${tutorial.description}</p>
+          </li>
+        `).join('');
+      })
+      .catch(error => {
+        const listElement = document.getElementById('tutorial-list');
+        listElement.innerHTML = '<li>Error al cargar los tutoriales. Por favor, intenta más tarde.</li>';
+        console.error('Error loading tutorials:', error);
+      });
+  </script>
 </body>
 </html>
