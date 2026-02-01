@@ -7,6 +7,11 @@ Inviertes o te empobreces?
 Si no mejoras empeoras
 Pagas el impuesto de la loteria minero domestico? 
 
+Para turorial clasificacion de tareas: esta tarea como la clasifico? preparar pomp para chatgpt y que el usuario le peque su problema y chatgpt se base en el promp
 
+tutorial uso IA basico
+tutorial IA para programar
+
+Llevar un contador  de los tiempos que nos lleva diseñar toda la web y cada tutorial para que ellector sepa el tiempo que le hemos dedicado 
 
 ## Sin procesar

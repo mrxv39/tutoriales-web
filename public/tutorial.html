@@ -16,6 +16,7 @@
   </header>
   
   <main>
+    <div id="reading-time" style="display: none; color: #666; font-size: 0.9rem; margin-bottom: 1rem;"></div>
     <article id="tutorial-content">
       <p>Cargando tutorial...</p>
     </article>
@@ -30,6 +31,15 @@
     const urlParams = new URLSearchParams(window.location.search);
     const slug = urlParams.get('slug');
     const contentElement = document.getElementById('tutorial-content');
+    const readingTimeElement = document.getElementById('reading-time');
+
+    // Calculate reading time (words per minute)
+    function calculateReadingTime(text) {
+      const wordsPerMinute = 200;
+      const words = text.trim().split(/\s+/).length;
+      const minutes = Math.ceil(words / wordsPerMinute);
+      return minutes;
+    }
 
     if (!slug) {
       contentElement.innerHTML = '<h2>Error</h2><p>No se especificó un tutorial.</p>';
@@ -43,6 +53,12 @@
           return response.text();
         })
         .then(markdown => {
+          // Calculate and display reading time
+          const readingTime = calculateReadingTime(markdown);
+          readingTimeElement.textContent = `Tiempo de lectura: ${readingTime} min`;
+          readingTimeElement.style.display = 'block';
+          
+          // Render markdown
           contentElement.innerHTML = marked.parse(markdown);
         })
         .catch(error => {
