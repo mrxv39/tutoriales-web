@@ -15,84 +15,86 @@
   </header>
   
   <main>
-    <article style="max-width: 600px; margin: 0 auto;">
-      <p style="margin-bottom: 1.5rem; color: #666;">Ayúdanos a conocerte mejor para recomendarte los tutoriales más adecuados.</p>
+    <article class="container-medium">
+      <p class="text-secondary">Ayúdanos a conocerte mejor para recomendarte los tutoriales más adecuados.</p>
       
       <form id="onboarding-form">
-        <div style="margin-bottom: 2rem;">
-          <label style="display: block; margin-bottom: 0.8rem; font-weight: 600; font-size: 1.1rem;">¿Cuál es tu nivel actual?</label>
-          <div style="display: flex; flex-direction: column; gap: 0.5rem;">
-            <label style="display: flex; align-items: center; cursor: pointer;">
-              <input type="radio" name="skill_level" value="Novato" required style="margin-right: 0.5rem;">
+        <div class="form-group">
+          <label class="form-label">¿Cuál es tu nivel actual?</label>
+          <div class="flex-col">
+            <label>
+              <input type="radio" name="skill_level" value="Novato" required>
               <span>Novato</span>
             </label>
-            <label style="display: flex; align-items: center; cursor: pointer;">
-              <input type="radio" name="skill_level" value="Intermedio" required style="margin-right: 0.5rem;">
+            <label>
+              <input type="radio" name="skill_level" value="Intermedio" required>
               <span>Intermedio</span>
             </label>
-            <label style="display: flex; align-items: center; cursor: pointer;">
-              <input type="radio" name="skill_level" value="Avanzado" required style="margin-right: 0.5rem;">
+            <label>
+              <input type="radio" name="skill_level" value="Avanzado" required>
               <span>Avanzado</span>
             </label>
           </div>
         </div>
         
-        <div style="margin-bottom: 2rem;">
-          <label style="display: block; margin-bottom: 0.8rem; font-weight: 600; font-size: 1.1rem;">¿Qué áreas te interesan? (selecciona una o más)</label>
-          <div style="display: flex; flex-direction: column; gap: 0.5rem;">
-            <label style="display: flex; align-items: center; cursor: pointer;">
-              <input type="checkbox" name="areas_to_improve" value="Productividad" style="margin-right: 0.5rem;">
+        <div class="form-group">
+          <label class="form-label">¿Qué áreas te interesan? (selecciona una o más)</label>
+          <div class="flex-col">
+            <label>
+              <input type="checkbox" name="areas_to_improve" value="Productividad">
               <span>Productividad</span>
             </label>
-            <label style="display: flex; align-items: center; cursor: pointer;">
-              <input type="checkbox" name="areas_to_improve" value="Sistema" style="margin-right: 0.5rem;">
+            <label>
+              <input type="checkbox" name="areas_to_improve" value="Sistema">
               <span>Sistema</span>
             </label>
-            <label style="display: flex; align-items: center; cursor: pointer;">
-              <input type="checkbox" name="areas_to_improve" value="Herramientas" style="margin-right: 0.5rem;">
+            <label>
+              <input type="checkbox" name="areas_to_improve" value="Herramientas">
               <span>Herramientas</span>
             </label>
-            <label style="display: flex; align-items: center; cursor: pointer;">
-              <input type="checkbox" name="areas_to_improve" value="Inversión" style="margin-right: 0.5rem;">
+            <label>
+              <input type="checkbox" name="areas_to_improve" value="Inversión">
               <span>Inversión</span>
             </label>
-            <label style="display: flex; align-items: center; cursor: pointer;">
-              <input type="checkbox" name="areas_to_improve" value="Programación" style="margin-right: 0.5rem;">
+            <label>
+              <input type="checkbox" name="areas_to_improve" value="Programación">
               <span>Programación</span>
             </label>
-            <label style="display: flex; align-items: center; cursor: pointer;">
-              <input type="checkbox" name="areas_to_improve" value="IA" style="margin-right: 0.5rem;">
+            <label>
+              <input type="checkbox" name="areas_to_improve" value="IA">
               <span>IA</span>
             </label>
           </div>
         </div>
         
-        <div style="margin-bottom: 2rem;">
-          <label style="display: block; margin-bottom: 0.8rem; font-weight: 600; font-size: 1.1rem;">¿Cuánto tiempo puedes dedicar por semana?</label>
-          <div style="display: flex; flex-direction: column; gap: 0.5rem;">
-            <label style="display: flex; align-items: center; cursor: pointer;">
-              <input type="radio" name="weekly_time" value="30 min" required style="margin-right: 0.5rem;">
+        <div class="form-group">
+          <label class="form-label">¿Cuánto tiempo puedes dedicar por semana?</label>
+          <div class="flex-col">
+            <label>
+              <input type="radio" name="weekly_time" value="30 min" required>
               <span>30 min</span>
             </label>
-            <label style="display: flex; align-items: center; cursor: pointer;">
-              <input type="radio" name="weekly_time" value="1h" required style="margin-right: 0.5rem;">
+            <label>
+              <input type="radio" name="weekly_time" value="1h" required>
               <span>1h</span>
             </label>
-            <label style="display: flex; align-items: center; cursor: pointer;">
-              <input type="radio" name="weekly_time" value="2h" required style="margin-right: 0.5rem;">
+            <label>
+              <input type="radio" name="weekly_time" value="2h" required>
               <span>2h</span>
             </label>
-            <label style="display: flex; align-items: center; cursor: pointer;">
-              <input type="radio" name="weekly_time" value="3h+" required style="margin-right: 0.5rem;">
+            <label>
+              <input type="radio" name="weekly_time" value="3h+" required>
               <span>3h+</span>
             </label>
           </div>
         </div>
         
-        <button type="submit" style="width: 100%; padding: 0.7rem; background: rgb(86, 156, 214); color: white; border: none; border-radius: 4px; font-size: 1rem; cursor: pointer; font-weight: 600;">
+        <button type="submit" class="btn-primary">
           Guardar y ver mi plan
         </button>
       </form>
+      
+      <p id="message" class="text-accent hidden"></p>
     </article>
   </main>
   
@@ -101,41 +103,59 @@
   </footer>
 
   <script>
-    // Check if user profile exists
-    if (!localStorage.getItem('user_profile')) {
-      window.location.href = 'registro.html';
-    }
+    let currentProfile = null;
 
-    // Pre-fill if editing
-    const existingOnboarding = localStorage.getItem('user_onboarding');
-    if (existingOnboarding) {
-      const data = JSON.parse(existingOnboarding);
-      
-      // Set skill level
-      const skillRadio = document.querySelector(`input[name="skill_level"][value="${data.skill_level}"]`);
-      if (skillRadio) skillRadio.checked = true;
-      
-      // Set areas
-      if (data.areas_to_improve && Array.isArray(data.areas_to_improve)) {
-        data.areas_to_improve.forEach(area => {
-          const checkbox = document.querySelector(`input[name="areas_to_improve"][value="${area}"]`);
-          if (checkbox) checkbox.checked = true;
-        });
+    // Check authentication and load existing profile
+    async function init() {
+      try {
+        const authRes = await fetch('/api/auth/me');
+        const authData = await authRes.json();
+        
+        if (!authData.loggedIn) {
+          window.location.href = 'registro.html';
+          return;
+        }
+        
+        // Load profile to get existing onboarding data
+        const profileRes = await fetch('/api/profile');
+        const profileData = await profileRes.json();
+        currentProfile = profileData.profile || {};
+        
+        // Pre-fill if editing
+        if (currentProfile.onboarding) {
+          const data = currentProfile.onboarding;
+          
+          // Set skill level
+          const skillRadio = document.querySelector(`input[name="skill_level"][value="${data.skill_level}"]`);
+          if (skillRadio) skillRadio.checked = true;
+          
+          // Set areas
+          if (data.areas_to_improve && Array.isArray(data.areas_to_improve)) {
+            data.areas_to_improve.forEach(area => {
+              const checkbox = document.querySelector(`input[name="areas_to_improve"][value="${area}"]`);
+              if (checkbox) checkbox.checked = true;
+            });
+          }
+          
+          // Set weekly time
+          const timeRadio = document.querySelector(`input[name="weekly_time"][value="${data.weekly_time}"]`);
+          if (timeRadio) timeRadio.checked = true;
+        }
+      } catch (error) {
+        console.error('Init error:', error);
+        window.location.href = 'registro.html';
       }
-      
-      // Set weekly time
-      const timeRadio = document.querySelector(`input[name="weekly_time"][value="${data.weekly_time}"]`);
-      if (timeRadio) timeRadio.checked = true;
     }
 
     // Handle form submission
-    document.getElementById('onboarding-form').addEventListener('submit', function(e) {
+    document.getElementById('onboarding-form').addEventListener('submit', async function(e) {
       e.preventDefault();
       
       const skillLevel = document.querySelector('input[name="skill_level"]:checked').value;
       const areasCheckboxes = document.querySelectorAll('input[name="areas_to_improve"]:checked');
       const areasToImprove = Array.from(areasCheckboxes).map(cb => cb.value);
       const weeklyTime = document.querySelector('input[name="weekly_time"]:checked').value;
+      const message = document.getElementById('message');
       
       if (areasToImprove.length === 0) {
         alert('Por favor, selecciona al menos un área de interés.');
@@ -149,9 +169,38 @@
         updated_at_iso: new Date().toISOString()
       };
       
-      localStorage.setItem('user_onboarding', JSON.stringify(onboardingData));
-      window.location.href = 'plan.html';
+      // Update profile with onboarding data
+      const updatedProfile = {
+        ...currentProfile,
+        onboarding: onboardingData
+      };
+      
+      try {
+        const response = await fetch('/api/profile', {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(updatedProfile)
+        });
+        
+        if (response.ok) {
+          message.textContent = 'Cuestionario guardado. Redirigiendo...';
+          message.classList.remove('hidden');
+          setTimeout(() => {
+            window.location.href = 'plan.html';
+          }, 500);
+        } else {
+          message.textContent = 'Error al guardar el cuestionario';
+          message.classList.remove('hidden');
+        }
+      } catch (error) {
+        console.error('Save error:', error);
+        message.textContent = 'Error de conexión';
+        message.classList.remove('hidden');
+      }
     });
+
+    // Initialize on page load
+    init();
   </script>
 </body>
 </html>

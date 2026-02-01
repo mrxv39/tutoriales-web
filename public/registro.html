@@ -3,38 +3,70 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Crear Perfil - Tutoriales Web</title>
+  <title>Registro / Login - Tutoriales Web</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <h1>Crear Perfil</h1>
+    <h1>Bienvenido</h1>
     <nav>
       <a href="index.html">← Volver al inicio</a>
     </nav>
   </header>
   
   <main>
-    <article style="max-width: 500px; margin: 0 auto;">
-      <form id="registration-form">
-        <div style="margin-bottom: 1rem;">
-          <label for="name" style="display: block; margin-bottom: 0.3rem; font-weight: 600;">Nombre:</label>
-          <input type="text" id="name" name="name" required 
-                 style="width: 100%; padding: 0.5rem; border: 1px solid #ddd; border-radius: 4px; font-size: 1rem;">
-        </div>
+    <article class="container-narrow">
+      <!-- Login Form -->
+      <div id="login-section">
+        <h2>Iniciar Sesión</h2>
+        <form id="login-form">
+          <div class="form-group">
+            <label for="login-email" class="form-label">Email:</label>
+            <input type="email" id="login-email" name="email" required class="form-input">
+          </div>
+          
+          <div class="form-group">
+            <label for="login-password" class="form-label">Contraseña:</label>
+            <input type="password" id="login-password" name="password" required class="form-input">
+          </div>
+          
+          <button type="submit" class="btn-primary">
+            Iniciar sesión
+          </button>
+        </form>
         
-        <div style="margin-bottom: 1.5rem;">
-          <label for="email" style="display: block; margin-bottom: 0.3rem; font-weight: 600;">Email:</label>
-          <input type="email" id="email" name="email" required 
-                 style="width: 100%; padding: 0.5rem; border: 1px solid #ddd; border-radius: 4px; font-size: 1rem;">
-        </div>
+        <p class="text-secondary">
+          ¿No tienes cuenta? <a href="#" id="show-register">Regístrate aquí</a>
+        </p>
         
-        <button type="submit" style="width: 100%; padding: 0.7rem; background: rgb(86, 156, 214); color: white; border: none; border-radius: 4px; font-size: 1rem; cursor: pointer; font-weight: 600;">
-          Crear perfil
-        </button>
-      </form>
-      
-      <p id="message" style="margin-top: 1rem; color: rgb(86, 156, 214); display: none;"></p>
+        <p id="login-message" class="text-accent hidden"></p>
+      </div>
+
+      <!-- Registration Form -->
+      <div id="register-section" class="hidden">
+        <h2>Crear Cuenta</h2>
+        <form id="registration-form">
+          <div class="form-group">
+            <label for="register-email" class="form-label">Email:</label>
+            <input type="email" id="register-email" name="email" required class="form-input">
+          </div>
+          
+          <div class="form-group">
+            <label for="register-password" class="form-label">Contraseña (mínimo 6 caracteres):</label>
+            <input type="password" id="register-password" name="password" required minlength="6" class="form-input">
+          </div>
+          
+          <button type="submit" class="btn-primary">
+            Crear cuenta
+          </button>
+        </form>
+        
+        <p class="text-secondary">
+          ¿Ya tienes cuenta? <a href="#" id="show-login">Inicia sesión aquí</a>
+        </p>
+        
+        <p id="register-message" class="text-accent hidden"></p>
+      </div>
     </article>
   </main>
   
@@ -43,42 +75,97 @@
   </footer>
 
   <script>
-    // Check if editing existing profile
-    const existingProfile = localStorage.getItem('user_profile');
-    if (existingProfile) {
-      const profile = JSON.parse(existingProfile);
-      document.getElementById('name').value = profile.name || '';
-      document.getElementById('email').value = profile.email || '';
-      document.querySelector('h1').textContent = 'Editar Perfil';
-      document.querySelector('button[type="submit"]').textContent = 'Guardar cambios';
-    }
+    // Check if already logged in
+    fetch('/api/auth/me')
+      .then(res => res.json())
+      .then(data => {
+        if (data.loggedIn) {
+          window.location.href = 'perfil.html';
+        }
+      })
+      .catch(err => console.error('Auth check failed:', err));
 
-    // Handle form submission
-    document.getElementById('registration-form').addEventListener('submit', function(e) {
+    // Toggle between login and register
+    document.getElementById('show-register').addEventListener('click', function(e) {
+      e.preventDefault();
+      document.getElementById('login-section').classList.add('hidden');
+      document.getElementById('register-section').classList.remove('hidden');
+    });
+
+    document.getElementById('show-login').addEventListener('click', function(e) {
+      e.preventDefault();
+      document.getElementById('register-section').classList.add('hidden');
+      document.getElementById('login-section').classList.remove('hidden');
+    });
+
+    // Handle login
+    document.getElementById('login-form').addEventListener('submit', async function(e) {
       e.preventDefault();
       
-      const name = document.getElementById('name').value.trim();
-      const email = document.getElementById('email').value.trim();
+      const email = document.getElementById('login-email').value.trim();
+      const password = document.getElementById('login-password').value;
+      const message = document.getElementById('login-message');
       
-      if (!name || !email) {
-        return;
+      message.classList.add('hidden');
+      
+      try {
+        const response = await fetch('/api/auth/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, password })
+        });
+        
+        const data = await response.json();
+        
+        if (response.ok) {
+          message.textContent = 'Login exitoso. Redirigiendo...';
+          message.classList.remove('hidden');
+          setTimeout(() => {
+            window.location.href = 'perfil.html';
+          }, 500);
+        } else {
+          message.textContent = data.error || 'Error al iniciar sesión';
+          message.classList.remove('hidden');
+        }
+      } catch (error) {
+        message.textContent = 'Error de conexión';
+        message.classList.remove('hidden');
       }
+    });
+
+    // Handle registration
+    document.getElementById('registration-form').addEventListener('submit', async function(e) {
+      e.preventDefault();
       
-      const profile = {
-        name: name,
-        email: email,
-        created_at_iso: new Date().toISOString()
-      };
+      const email = document.getElementById('register-email').value.trim();
+      const password = document.getElementById('register-password').value;
+      const message = document.getElementById('register-message');
       
-      localStorage.setItem('user_profile', JSON.stringify(profile));
+      message.classList.add('hidden');
       
-      const message = document.getElementById('message');
-      message.textContent = 'Perfil guardado correctamente. Redirigiendo...';
-      message.style.display = 'block';
-      
-      setTimeout(() => {
-        window.location.href = 'perfil.html';
-      }, 1000);
+      try {
+        const response = await fetch('/api/auth/register', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, password })
+        });
+        
+        const data = await response.json();
+        
+        if (response.ok) {
+          message.textContent = 'Cuenta creada. Redirigiendo...';
+          message.classList.remove('hidden');
+          setTimeout(() => {
+            window.location.href = 'perfil.html';
+          }, 500);
+        } else {
+          message.textContent = data.error || 'Error al crear cuenta';
+          message.classList.remove('hidden');
+        }
+      } catch (error) {
+        message.textContent = 'Error de conexión';
+        message.classList.remove('hidden');
+      }
     });
   </script>
 </body>

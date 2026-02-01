@@ -11,16 +11,16 @@
     <h1>Bienvenido a Tutoriales Web</h1>
     <p class="tagline">Usa las herramientas y sé libre</p>
     <p class="header-description">Aprende a dominar las herramientas que hacen tu trabajo más fácil.</p>
-    <nav style="margin-top: 1rem;">
-      <a href="#" id="profile-link" style="color: white; text-decoration: none; opacity: 0.9; font-size: 0.95rem;">Cargando...</a>
+    <nav>
+      <a href="#" id="profile-link" class="link-nav">Cargando...</a>
     </nav>
   </header>
   
   <main>
-    <div id="onboarding-banner" style="display: none; background: #fff3cd; padding: 1rem; border-radius: 5px; margin-bottom: 1.5rem; border-left: 4px solid rgb(86, 156, 214);">
-      <p style="margin: 0; color: #856404;">
+    <div id="onboarding-banner" class="banner hidden">
+      <p>
         <strong>¡Personaliza tu experiencia!</strong> 
-        <a href="onboarding.html" style="color: rgb(86, 156, 214); font-weight: 600; text-decoration: underline;">Completa tu cuestionario</a> para tener tu plan de aprendizaje.
+        <a href="onboarding.html">Completa tu cuestionario</a> para tener tu plan de aprendizaje.
       </p>
     </div>
     
@@ -46,23 +46,44 @@
   </footer>
 
   <script>
-    // Update profile link based on localStorage
+    // Update profile link based on auth state
     const profileLink = document.getElementById('profile-link');
-    const userProfile = localStorage.getItem('user_profile');
-    const userOnboarding = localStorage.getItem('user_onboarding');
     
-    if (userProfile) {
-      profileLink.textContent = 'Mi perfil';
-      profileLink.href = 'perfil.html';
-      
-      // Show onboarding banner if profile exists but no onboarding
-      if (!userOnboarding) {
-        document.getElementById('onboarding-banner').style.display = 'block';
-      }
-    } else {
-      profileLink.textContent = 'Crear perfil';
-      profileLink.href = 'registro.html';
-    }
+    fetch('/api/auth/me')
+      .then(res => res.json())
+      .then(authData => {
+        if (authData.loggedIn) {
+          profileLink.textContent = 'Mi perfil';
+          profileLink.href = 'perfil.html';
+          
+          // Load profile to check for onboarding
+          return fetch('/api/profile');
+        } else {
+          profileLink.textContent = 'Crear perfil';
+          profileLink.href = 'registro.html';
+          return null;
+        }
+      })
+      .then(profileRes => {
+        if (profileRes) {
+          return profileRes.json();
+        }
+        return null;
+      })
+      .then(profileData => {
+        // Show onboarding banner if logged in but no onboarding
+        if (profileData) {
+          const profile = profileData.profile || {};
+          if (!profile.onboarding) {
+            document.getElementById('onboarding-banner').classList.remove('hidden');
+          }
+        }
+      })
+      .catch(err => {
+        console.error('Auth check failed:', err);
+        profileLink.textContent = 'Crear perfil';
+        profileLink.href = 'registro.html';
+      });
 
     // Fetch and render tutorials from JSON manifest
     fetch('/tutoriales/index.json')

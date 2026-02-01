@@ -1,9 +1,9 @@
 # Hoja de ruta – tutoriales-web
 
-Contador horas web: 1:44:43
+Contador horas web: 3:44:43
 tutorial sistema de trabajo: 0:00:00
 
-## Implementado (16)
+## Implementado (18)
 - Estructura base del proyecto
 - Servidor estático con Node.js y Express
 - Repositorio GitHub inicializado y configurado
@@ -13,6 +13,7 @@ tutorial sistema de trabajo: 0:00:00
 - Manejo de error cuando un tutorial no existe
 - Categorías visibles en la home
 - Sustitución del color de acento por rgb(86, 156, 214)
+- Sustitución completa del color verde restante por un esquema azul consistente
 - Tiempo de lectura estimado en cada tutorial
 - Eliminación del tutorial "Introducción a HTML"
 - Publicación del tutorial de apps de productividad
@@ -22,13 +23,14 @@ tutorial sistema de trabajo: 0:00:00
 - Contadores visibles del tiempo dedicado (web y por tutorial)
 - Tutorial del sistema de clasificación de tareas con implementación práctica
 
-## Por implementar – CRÍTICAS (6)
-- Sustitución completa del color verde restante por un esquema azul consistente
+
+## Por implementar – CRÍTICAS (5)
 - Definición y visualización del lema alternativo de la web
 - Tutorial de uso básico de inteligencia artificial
 - Tutorial de inteligencia artificial aplicada a programación
 - Tutorial sobre preparación para invertir (broker, préstamos y liquidez)
 - Sección de inversión orientada a rentabilizar el patrimonio personal
+
 
 ## Por implementar – NO CRÍTICAS (14)
 - Tutorial sobre Fly.io
