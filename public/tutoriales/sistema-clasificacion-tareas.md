@@ -224,6 +224,95 @@ Todo está apuntado o hecho.
 
 ---
 
+## Cómo configurar Gmail, Todoist y Calendar para este sistema
+
+Este sistema necesita que las tres herramientas estén configuradas con un propósito claro.  
+No hace falta complicarlo.  
+Solo hace falta que cada una haga su trabajo.
+
+---
+
+### 1. Configuración de Gmail (entrada)
+
+Gmail es solo una bandeja de entrada.  
+Nada más.
+
+Lo que necesitas:
+- Gmail abierto para recibir.
+- Inbox vacío o casi vacío.
+- Nada se queda esperando ahí.
+
+No uses recordatorios de Gmail.  
+No uses tareas de Gmail.  
+No dejes emails como recordatorio visual.
+
+Si un email necesita acción, sale de Gmail.  
+Si no necesita acción, se archiva.
+
+![Configuración básica de Gmail](capturas/gmail-configuracion.png)
+
+---
+
+### 2. Configuración de Todoist (cerebro)
+
+Todoist es donde viven todas las tareas.  
+Aquí decides, clasificas y miras qué toca.
+
+Lo que necesitas:
+- Todoist abierto cada mañana.
+- Tareas escritas como acciones, no como temas.
+- Sistema de colores opcional (solo si ayuda).
+
+Cuando un email requiere acción:
+- Abres Todoist.
+- Creas la tarea.
+- Archivas el email.
+
+Las tareas no son recordatorios vagos.  
+Son acciones claras.
+
+Ejemplo:
+- ❌ "Email de Pedro"
+- ✅ "Responder a Pedro sobre el presupuesto"
+
+![Configuración básica de Todoist](capturas/todoist-configuracion.png)
+
+---
+
+### 3. Configuración de Calendar (agenda)
+
+Calendar es solo para bloques de tiempo.  
+No es una lista de tareas disfrazada.
+
+Lo que necesitas:
+- Calendar abierto para ver el día.
+- Solo eventos con hora de inicio y hora de fin.
+- Nada que no tenga tiempo asignado.
+
+Si algo no tiene hora de inicio y fin, no va al calendario.  
+Va a Todoist.
+
+![Configuración básica de Calendar](capturas/calendar-configuracion.png)
+
+---
+
+### Cómo se conectan las tres herramientas
+
+**Gmail alimenta a Todoist:**  
+Los emails que requieren acción se convierten en tareas.
+
+**Todoist decide qué se hace:**  
+Miras tus tareas y eliges qué hacer ahora.
+
+**Calendar muestra la realidad:**  
+Solo lo que ya tiene hora reservada aparece aquí.
+
+No hacen falta integraciones.  
+No hacen falta automatizaciones.  
+Solo hace falta usarlas con un criterio claro.
+
+---
+
 ## Cierre
 
 Trabajar bien no es hacerlo todo.  

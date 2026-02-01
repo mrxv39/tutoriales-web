@@ -16,4 +16,6 @@ A medida que la web vaya creciendo puede ser muy abrumador tanta inforacion. Ten
 
 Tutorial recibe donacion ya con  Nivel 1 (recomendado): wallet con Lightning Address / LNURL + dirección BTC + QR.
 
+Cada tutorial debe tener 3 vernisiones, novato, medio y experto. Si el usuario es novato y es la primera vez que lee el tutorial debemos mostrarle la version que le corresponde. 
+
 ## Sin procesar
