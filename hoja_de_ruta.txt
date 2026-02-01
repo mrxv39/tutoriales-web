@@ -3,7 +3,7 @@
 Contador horas web: 1:44:43
 tutorial sistema de trabajo: 0:00:00
 
-## Implementado (15)
+## Implementado (16)
 - Estructura base del proyecto
 - Servidor estático con Node.js y Express
 - Repositorio GitHub inicializado y configurado
@@ -19,9 +19,9 @@ tutorial sistema de trabajo: 0:00:00
 - Auto-listado de tutoriales desde manifest JSON
 - Deploy a Fly.io
 - Definición y visualización del lema principal de la web
-
-## Por implementar – CRÍTICAS (4)
 - Contadores visibles del tiempo dedicado (web y por tutorial) basados en el manifest
+
+## Por implementar – CRÍTICAS (3)
 - Tutorial sobre sistema de clasificación de tareas
 - Tutorial de uso básico de inteligencia artificial
 - Tutorial de inteligencia artificial aplicada a programación

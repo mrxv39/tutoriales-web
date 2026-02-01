@@ -9,4 +9,8 @@ Tutorial tu marca digital: web + redes y automatizar publicaciones
 
 Tutorial atajos de teclado:
 
+A medida que la web vaya creciendo puede ser muy abrumador tanta inforacion. Tenemos que crear la posibilidad de que el usuario pueda registrarse en la web y hacerle un cuestionario en el registro de cual es su nivel de conociemientos actual y que areas quiere mejorar. En funcion de eso diseñarle un plan de ruta. En funcion de su tiempo disponible proporle 1hora a la semana o ..... ya decidire
+
+Tutorial recibe donacion ya con  Nivel 1 (recomendado): wallet con Lightning Address / LNURL + dirección BTC + QR.
+
 ## Sin procesar

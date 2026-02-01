@@ -5,5 +5,12 @@
     "description": "Herramientas sencillas que marcan una diferencia real en el día a día: gestión de tareas, control del tiempo, capturas rápidas y más.",
     "categories": ["Productividad", "Herramientas"],
     "dev_time": "0:00:00"
+  },
+  {
+    "slug": "sistema-clasificacion-tareas",
+    "title": "Un sistema simple para clasificar tareas",
+    "description": "Un método claro para decidir qué hacer sin estrés ni carga mental.",
+    "categories": ["Productividad", "Sistema"],
+    "dev_time": "0:00:00"
   }
 ]
