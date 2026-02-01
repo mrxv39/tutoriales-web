@@ -1,0 +1,80 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+header {
+  background: #4CAF50;
+  color: white;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  border-radius: 5px;
+}
+
+header h1 {
+  font-size: 2rem;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-top: 0.5rem;
+  display: inline-block;
+}
+
+main {
+  min-height: 400px;
+}
+
+.tutorial-list {
+  list-style: none;
+  padding: 1rem 0;
+}
+
+.tutorial-list li {
+  padding: 0.75rem;
+  margin-bottom: 0.5rem;
+  background: #f4f4f4;
+  border-radius: 5px;
+}
+
+.tutorial-list li a {
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.tutorial-list li:hover {
+  background: #e0e0e0;
+}
+
+article {
+  padding: 1rem;
+}
+
+article h2 {
+  margin-bottom: 1rem;
+  color: #4CAF50;
+}
+
+article p {
+  margin-bottom: 1rem;
+}
+
+footer {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid #ddd;
+  text-align: center;
+  color: #777;
+}
