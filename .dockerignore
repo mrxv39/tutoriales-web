@@ -1,0 +1,38 @@
+# Dependencies (force rebuild in container for correct architecture)
+node_modules
+
+# Local data directory
+data
+
+# Git repository
+.git
+.gitignore
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode
+.idea
+
+# Build artifacts
+dist
+build
+
+# Documentation
+README.md
+hoja_de_ruta.txt
+ideas.md
+FLY_DEPLOYMENT.md

@@ -1,11 +1,15 @@
-FROM node:20-alpine
+# Use glibc-based Debian image for better native module compatibility
+FROM node:20-bookworm-slim
 
 WORKDIR /app
 
-COPY package*.json ./
+# Copy package files first for better layer caching
+COPY package.json package-lock.json ./
 
-RUN npm install --production
+# Clean install production dependencies (builds native modules in container)
+RUN npm ci --omit=dev
 
+# Copy application code (node_modules excluded via .dockerignore)
 COPY . .
 
 # Ensure /data directory exists at build time
