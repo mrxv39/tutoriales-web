@@ -1,0 +1,8 @@
+# Hoja de ruta – tutoriales-web
+
+## Implementado
+- Initial project structure
+
+## Por implementar – CRÍTICAS
+
+## Por implementar – NO CRÍTICAS
