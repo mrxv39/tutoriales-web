@@ -59,6 +59,7 @@
             </a>
             <div class="tutorial-tags">
               ${tutorial.categories.map(cat => `<span class="tag">${cat}</span>`).join('')}
+              ${tutorial.dev_time ? `<span class="dev-time-tag">Tiempo de desarrollo: ${tutorial.dev_time}</span>` : ''}
             </div>
             <p>${tutorial.description}</p>
           </li>

@@ -16,6 +16,7 @@
   </header>
   
   <main>
+    <div id="dev-time" style="display: none; color: #666; font-size: 0.9rem; margin-bottom: 0.5rem;"></div>
     <div id="reading-time" style="display: none; color: #666; font-size: 0.9rem; margin-bottom: 1rem;"></div>
     <article id="tutorial-content">
       <p>Cargando tutorial...</p>
@@ -32,6 +33,7 @@
     const slug = urlParams.get('slug');
     const contentElement = document.getElementById('tutorial-content');
     const readingTimeElement = document.getElementById('reading-time');
+    const devTimeElement = document.getElementById('dev-time');
 
     // Calculate reading time (words per minute)
     function calculateReadingTime(text) {
@@ -44,6 +46,21 @@
     if (!slug) {
       contentElement.innerHTML = '<h2>Error</h2><p>No se especificó un tutorial.</p>';
     } else {
+      // Fetch manifest to get dev_time
+      fetch('/tutoriales/index.json')
+        .then(response => response.json())
+        .then(tutorials => {
+          const tutorial = tutorials.find(t => t.slug === slug);
+          if (tutorial && tutorial.dev_time) {
+            devTimeElement.textContent = `Tiempo de desarrollo: ${tutorial.dev_time}`;
+            devTimeElement.style.display = 'block';
+          }
+        })
+        .catch(error => {
+          // Silently fail if manifest can't be loaded
+          console.log('Could not load manifest for dev_time');
+        });
+
       // Fetch and render Markdown file
       fetch(`/tutoriales/${slug}.md`)
         .then(response => {

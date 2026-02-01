@@ -1,6 +1,9 @@
 # Hoja de ruta – tutoriales-web
 
-## Implementado (14)
+Contador horas web: 1:44:43
+tutorial sistema de trabajo: 0:00:00
+
+## Implementado (15)
 - Estructura base del proyecto
 - Servidor estático con Node.js y Express
 - Repositorio GitHub inicializado y configurado
@@ -15,22 +18,22 @@
 - Publicación del tutorial de apps de productividad
 - Auto-listado de tutoriales desde manifest JSON
 - Deploy a Fly.io
+- Definición y visualización del lema principal de la web
 
 ## Por implementar – CRÍTICAS (4)
-- Definición y visualización del lema principal de la web
+- Contadores visibles del tiempo dedicado (web y por tutorial) basados en el manifest
 - Tutorial sobre sistema de clasificación de tareas
 - Tutorial de uso básico de inteligencia artificial
 - Tutorial de inteligencia artificial aplicada a programación
 
-## Por implementar – NO CRÍTICAS (12)
+## Por implementar – NO CRÍTICAS (11)
 - Newsletter semanal para generar confianza con los lectores
 - Sistema de registro de emails
 - Página de reflexiones/artículos de opinión
 - Herramienta interactiva: “¿Cómo clasifico esta tarea?” basada en ChatGPT
-- Contador visible del tiempo dedicado a diseñar la web y cada tutorial
 - Tutorial/documental: creación de esta web grabada en vídeo
 - Página “Acerca de”
-- Mejora de SEO básico
+- Mejora de SEO básico (meta tags)
 - Soporte para imágenes dentro de tutoriales
 - Soporte para vídeos embebidos
 - Buscador de tutoriales
