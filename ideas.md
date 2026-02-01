@@ -1,9 +1,12 @@
 # Ideas
+
+Lema: web solo levbantando el culo de la silla ya estas en top 1%
 Seccion Inversion: saca a rentabilidad a tu riqueza 
 
 Turorial: preparate para inverir. cuenta broker, cuenta prestamos y liquidez
 
-Tutorial: vscode
+Tutorial progrmacion: el 100% de las herramientas que necesitas puedes programarlas tu mismo.
+
 Tutoria fly.io
 Tutorial tu marca digital: web + redes y automatizar publicaciones
 

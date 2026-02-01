@@ -138,6 +138,92 @@ Tiene que ser suficiente para trabajar con calma.
 
 ---
 
+## Cómo aplicar este sistema en el día a día
+
+Este sistema funciona con tres herramientas:
+- **Gmail** (entrada)
+- **Todoist** (cerebro)
+- **Calendar** (agenda)
+
+Cada herramienta tiene un rol claro.
+
+---
+
+### Los roles
+
+**Gmail es la entrada**  
+Todo lo que llega entra por aquí.  
+Nada se organiza aquí.  
+Nada se decide aquí.
+
+**Todoist es el cerebro**  
+Todas las tareas viven aquí.  
+Aquí clasificas, priorizas y miras qué toca hacer.
+
+**Calendar es la agenda**  
+Solo lo que tiene hora de inicio y hora de fin va aquí.  
+No es una lista de tareas.
+
+---
+
+### Reglas básicas
+
+- Si algo requiere acción, se convierte en tarea.
+- Si algo tiene hora de inicio y duración, va al calendario.
+- Nada se decide en Gmail.
+- Nada se organiza en Calendar.
+- Gmail nunca se usa como lista de tareas.
+
+---
+
+### Qué hacer cuando llega un email
+
+Cuando lees un email, solo dos opciones:
+1. No requiere acción → archívalo.
+2. Requiere acción → créalo como tarea en Todoist.
+
+Las tareas se crean en Todoist.  
+No se dejan en Gmail esperando.
+
+---
+
+### Tareas vs eventos
+
+**Tareas (Todoist):**  
+- Responder algo
+- Preparar algo
+- Revisar algo
+- Decidir algo
+
+**Eventos (Calendar):**  
+- Reuniones
+- Llamadas
+- Bloques de tiempo reservados
+
+Un evento solo existe si tiene hora de inicio y hora de fin.  
+Si no tiene hora, es una tarea.
+
+---
+
+### Un día normal con este sistema
+
+**Por la mañana:**  
+Abres Todoist.  
+Ves qué toca hacer hoy.  
+El día está claro.
+
+**Durante el día:**  
+Llegan emails.  
+Los que requieren acción se convierten en tareas.  
+Los que no, se archivan.
+
+**Al final del día:**  
+Nada queda en tu cabeza.  
+Nada pendiente en Gmail.  
+Todo está apuntado o hecho.
+
+---
+
 ## Cierre
 
 Trabajar bien no es hacerlo todo.  
