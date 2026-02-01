@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Perfil - Tutoriales Web</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Mi Perfil</h1>
+    <nav>
+      <a href="index.html">← Volver al inicio</a>
+    </nav>
+  </header>
+  
+  <main>
+    <article id="profile-content" style="max-width: 500px; margin: 0 auto;">
+      <!-- Content will be loaded by JavaScript -->
+    </article>
+  </main>
+  
+  <footer>
+    <p>&copy; 2026 Tutoriales Web</p>
+  </footer>
+
+  <script>
+    // Check if profile exists
+    const profileData = localStorage.getItem('user_profile');
+    
+    if (!profileData) {
+      // No profile, redirect to registration
+      window.location.href = 'registro.html';
+    } else {
+      // Profile exists, display it
+      const profile = JSON.parse(profileData);
+      const content = document.getElementById('profile-content');
+      
+      content.innerHTML = `
+        <div style="background: #f4f4f4; padding: 1.5rem; border-radius: 5px; margin-bottom: 1.5rem;">
+          <h2 style="margin-bottom: 1rem; color: rgb(86, 156, 214);">Hola, ${profile.name}</h2>
+          <p style="margin-bottom: 0.5rem;"><strong>Email:</strong> ${profile.email}</p>
+          <p style="color: #666; font-size: 0.9rem;">Perfil creado: ${new Date(profile.created_at_iso).toLocaleDateString('es-ES')}</p>
+        </div>
+        
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+          <button id="edit-btn" style="flex: 1; padding: 0.7rem; background: rgb(86, 156, 214); color: white; border: none; border-radius: 4px; font-size: 1rem; cursor: pointer; font-weight: 600;">
+            Editar perfil
+          </button>
+          <button id="delete-btn" style="flex: 1; padding: 0.7rem; background: #d9534f; color: white; border: none; border-radius: 4px; font-size: 1rem; cursor: pointer; font-weight: 600;">
+            Borrar perfil
+          </button>
+        </div>
+      `;
+      
+      // Edit button
+      document.getElementById('edit-btn').addEventListener('click', function() {
+        window.location.href = 'registro.html';
+      });
+      
+      // Delete button
+      document.getElementById('delete-btn').addEventListener('click', function() {
+        if (confirm('¿Estás seguro de que quieres borrar tu perfil?')) {
+          localStorage.removeItem('user_profile');
+          window.location.href = 'index.html';
+        }
+      });
+    }
+  </script>
+</body>
+</html>

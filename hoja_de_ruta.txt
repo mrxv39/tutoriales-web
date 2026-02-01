@@ -19,22 +19,29 @@ tutorial sistema de trabajo: 0:00:00
 - Auto-listado de tutoriales desde manifest JSON
 - Deploy a Fly.io
 - Definición y visualización del lema principal de la web
-- Contadores visibles del tiempo dedicado (web y por tutorial) basados en el manifest
+- Contadores visibles del tiempo dedicado (web y por tutorial)
+- Tutorial del sistema de clasificación de tareas con implementación práctica
 
-## Por implementar – CRÍTICAS (3)
-- Tutorial sobre sistema de clasificación de tareas
+## Por implementar – CRÍTICAS (6)
+- Sustitución completa del color verde restante por un esquema azul consistente
+- Definición y visualización del lema alternativo de la web
 - Tutorial de uso básico de inteligencia artificial
 - Tutorial de inteligencia artificial aplicada a programación
+- Tutorial sobre preparación para invertir (broker, préstamos y liquidez)
+- Sección de inversión orientada a rentabilizar el patrimonio personal
 
-## Por implementar – NO CRÍTICAS (11)
-- Newsletter semanal para generar confianza con los lectores
-- Sistema de registro de emails
-- Página de reflexiones/artículos de opinión
-- Herramienta interactiva: “¿Cómo clasifico esta tarea?” basada en ChatGPT
-- Tutorial/documental: creación de esta web grabada en vídeo
+## Por implementar – NO CRÍTICAS (14)
+- Tutorial sobre Fly.io
+- Tutorial sobre creación de marca digital (web, redes y automatización)
+- Tutorial sobre atajos de teclado
+- Página de reflexiones y artículos de opinión
+- Sistema de registro de usuarios
+- Cuestionario inicial de nivel y áreas de mejora al registrarse
+- Generación de plan de ruta personalizado según nivel y tiempo disponible
+- Newsletter semanal
+- Sistema de donaciones con Bitcoin (Lightning, dirección BTC y QR)
+- Tutorial sobre recepción de donaciones con Bitcoin (nivel 1)
+- Soporte para versiones de tutorial según nivel (novato, medio, experto)
+- Selección automática de versión de tutorial según perfil del usuario
 - Página “Acerca de”
 - Mejora de SEO básico (meta tags)
-- Soporte para imágenes dentro de tutoriales
-- Soporte para vídeos embebidos
-- Buscador de tutoriales
-- Integración de BTCPayServer para aceptar donaciones en Bitcoin

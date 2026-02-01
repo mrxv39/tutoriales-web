@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crear Perfil - Tutoriales Web</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Crear Perfil</h1>
+    <nav>
+      <a href="index.html">← Volver al inicio</a>
+    </nav>
+  </header>
+  
+  <main>
+    <article style="max-width: 500px; margin: 0 auto;">
+      <form id="registration-form">
+        <div style="margin-bottom: 1rem;">
+          <label for="name" style="display: block; margin-bottom: 0.3rem; font-weight: 600;">Nombre:</label>
+          <input type="text" id="name" name="name" required 
+                 style="width: 100%; padding: 0.5rem; border: 1px solid #ddd; border-radius: 4px; font-size: 1rem;">
+        </div>
+        
+        <div style="margin-bottom: 1.5rem;">
+          <label for="email" style="display: block; margin-bottom: 0.3rem; font-weight: 600;">Email:</label>
+          <input type="email" id="email" name="email" required 
+                 style="width: 100%; padding: 0.5rem; border: 1px solid #ddd; border-radius: 4px; font-size: 1rem;">
+        </div>
+        
+        <button type="submit" style="width: 100%; padding: 0.7rem; background: rgb(86, 156, 214); color: white; border: none; border-radius: 4px; font-size: 1rem; cursor: pointer; font-weight: 600;">
+          Crear perfil
+        </button>
+      </form>
+      
+      <p id="message" style="margin-top: 1rem; color: rgb(86, 156, 214); display: none;"></p>
+    </article>
+  </main>
+  
+  <footer>
+    <p>&copy; 2026 Tutoriales Web</p>
+  </footer>
+
+  <script>
+    // Check if editing existing profile
+    const existingProfile = localStorage.getItem('user_profile');
+    if (existingProfile) {
+      const profile = JSON.parse(existingProfile);
+      document.getElementById('name').value = profile.name || '';
+      document.getElementById('email').value = profile.email || '';
+      document.querySelector('h1').textContent = 'Editar Perfil';
+      document.querySelector('button[type="submit"]').textContent = 'Guardar cambios';
+    }
+
+    // Handle form submission
+    document.getElementById('registration-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      
+      if (!name || !email) {
+        return;
+      }
+      
+      const profile = {
+        name: name,
+        email: email,
+        created_at_iso: new Date().toISOString()
+      };
+      
+      localStorage.setItem('user_profile', JSON.stringify(profile));
+      
+      const message = document.getElementById('message');
+      message.textContent = 'Perfil guardado correctamente. Redirigiendo...';
+      message.style.display = 'block';
+      
+      setTimeout(() => {
+        window.location.href = 'perfil.html';
+      }, 1000);
+    });
+  </script>
+</body>
+</html>
