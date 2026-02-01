@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tutorial - Tutoriales Web</title>
   <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
   <header>
@@ -15,15 +16,39 @@
   </header>
   
   <main>
-    <article>
-      <h2>Título del Tutorial</h2>
-      <p>Este es un placeholder para el contenido del tutorial.</p>
-      <p>Aquí puedes agregar el contenido, ejemplos de código, imágenes y más.</p>
+    <article id="tutorial-content">
+      <p>Cargando tutorial...</p>
     </article>
   </main>
   
   <footer>
     <p>&copy; 2026 Tutoriales Web</p>
   </footer>
+
+  <script>
+    // Get slug from query parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    const slug = urlParams.get('slug');
+    const contentElement = document.getElementById('tutorial-content');
+
+    if (!slug) {
+      contentElement.innerHTML = '<h2>Error</h2><p>No se especificó un tutorial.</p>';
+    } else {
+      // Fetch and render Markdown file
+      fetch(`/tutoriales/${slug}.md`)
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Tutorial no encontrado');
+          }
+          return response.text();
+        })
+        .then(markdown => {
+          contentElement.innerHTML = marked.parse(markdown);
+        })
+        .catch(error => {
+          contentElement.innerHTML = '<h2>Tutorial no encontrado</h2><p>El tutorial que buscas no existe.</p>';
+        });
+    }
+  </script>
 </body>
 </html>

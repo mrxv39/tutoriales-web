@@ -1,8 +1,26 @@
 # Hoja de ruta – tutoriales-web
 
 ## Implementado
-- Initial project structure
+- Estructura base del proyecto
+- Servidor estático con Node.js y Express
+- Repositorio GitHub inicializado y configurado
+- Archivos de control del proyecto (ideas.md y hoja_de_ruta.txt)
 
 ## Por implementar – CRÍTICAS
+- Página de inicio accesible desde navegador
+- Página de detalle de tutorial accesible mediante URL
+- Carga de tutoriales desde archivos Markdown
+- Renderizado de contenido Markdown en HTML
+- Navegación básica entre inicio y tutorial
+- Manejo de error cuando un tutorial no existe
+- Al menos un tutorial de ejemplo funcional
 
 ## Por implementar – NO CRÍTICAS
+- Auto-listado dinámico de tutoriales sin editar HTML
+- Estilos CSS básicos y responsive
+- Soporte para imágenes dentro de tutoriales
+- Soporte para vídeos embebidos
+- Sistema de etiquetas o categorías
+- Buscador de tutoriales
+- Página “Acerca de”
+- Mejora de SEO básico (meta tags)
