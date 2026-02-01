@@ -1,6 +1,6 @@
 # Hoja de ruta – tutoriales-web
 
-Contador horas web: 3:44:43
+Contador horas web: 5:49:43
 tutorial sistema de trabajo: 0:00:00
 
 ## Implementado (18)
@@ -24,18 +24,20 @@ tutorial sistema de trabajo: 0:00:00
 - Tutorial del sistema de clasificación de tareas con implementación práctica
 
 
-## Por implementar – CRÍTICAS (5)
+## Por implementar – CRÍTICAS (6)
 - Definición y visualización del lema alternativo de la web
 - Tutorial de uso básico de inteligencia artificial
 - Tutorial de inteligencia artificial aplicada a programación
 - Tutorial sobre preparación para invertir (broker, préstamos y liquidez)
 - Sección de inversión orientada a rentabilizar el patrimonio personal
+- Tutorial sobre mejora de procesos productivos (análisis y optimización personal)
 
 
-## Por implementar – NO CRÍTICAS (14)
+## Por implementar – NO CRÍTICAS (17)
 - Tutorial sobre Fly.io
 - Tutorial sobre creación de marca digital (web, redes y automatización)
 - Tutorial sobre atajos de teclado
+- Tutorial sobre soberanía digital básica (sugerido antes de registrarse)
 - Página de reflexiones y artículos de opinión
 - Sistema de registro de usuarios
 - Cuestionario inicial de nivel y áreas de mejora al registrarse
@@ -45,5 +47,7 @@ tutorial sistema de trabajo: 0:00:00
 - Tutorial sobre recepción de donaciones con Bitcoin (nivel 1)
 - Soporte para versiones de tutorial según nivel (novato, medio, experto)
 - Selección automática de versión de tutorial según perfil del usuario
-- Página “Acerca de”
+- Sistema de secciones dentro de tutoriales (navegación, marca de leído, colapsado)
+- Página "Acerca de"
 - Mejora de SEO básico (meta tags)
+- Proyecto futuro: plataforma estilo GitHub para conocimiento colaborativo
