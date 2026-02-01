@@ -4,24 +4,24 @@
 - Estructura base del proyecto
 - Servidor estático con Node.js y Express
 - Repositorio GitHub inicializado y configurado
-- Archivos de control del proyecto (ideas.md y hoja_de_ruta.txt)
-- Página de detalle de tutorial accesible mediante URL
-- Carga de tutoriales desde archivos Markdown
-- Renderizado de contenido Markdown en HTML
-- Manejo de error cuando un tutorial no existe
-- Tutorial de ejemplo funcional
 - Página de inicio con listado funcional de tutoriales
-- Navegación básica entre inicio y tutorial
+- Página de detalle de tutorial accesible mediante URL
+- Carga y renderizado de tutoriales desde archivos Markdown
+- Manejo de error cuando un tutorial no existe
+- Publicación de tutoriales de productividad
 
 ## Por implementar – CRÍTICAS
-- (vacío)
+- Eliminación del tutorial "Introducción a HTML"
+- Sustitución del color verde actual por rgb(86, 156, 214)
+- Definición y visualización de categorías para los tutoriales existentes
+- Indicación del tiempo de lectura estimado en cada tutorial
 
 ## Por implementar – NO CRÍTICAS
-- Auto-listado dinámico de tutoriales sin editar HTML
-- Estilos CSS básicos y responsive
-- Soporte para imágenes dentro de tutoriales
-- Soporte para vídeos embebidos
-- Sistema de etiquetas o categorías
-- Buscador de tutoriales
-- Página “Acerca de”
-- Mejora de SEO básico
+- Sistema de registro de emails para avisos de nuevos tutoriales
+- Selección de temas de interés en el registro de emails
+- Sistema para recibir solicitudes y sugerencias de nuevos tutoriales
+- Marcado visual de cada tutorial como tarea amarilla
+- Mini test asociado a cada tutorial
+- Envío diferido del mini test para reforzar retención
+- Integración de BTCPayServer para aceptar donaciones en Bitcoin
+
