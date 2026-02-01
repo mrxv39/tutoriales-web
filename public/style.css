@@ -23,6 +23,12 @@ header {
 
 header h1 {
   font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+header p {
+  font-size: 1rem;
+  opacity: 0.9;
 }
 
 nav a {
@@ -52,6 +58,19 @@ main {
   color: #333;
   text-decoration: none;
   font-weight: bold;
+  display: block;
+}
+
+.tutorial-list li a strong {
+  color: #4CAF50;
+  font-size: 1.1rem;
+}
+
+.tutorial-list li p {
+  margin: 0.5rem 0 0 0;
+  font-size: 0.9rem;
+  color: #666;
+  font-weight: normal;
 }
 
 .tutorial-list li:hover {

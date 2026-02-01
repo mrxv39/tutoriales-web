@@ -5,15 +5,15 @@
 - Servidor estático con Node.js y Express
 - Repositorio GitHub inicializado y configurado
 - Archivos de control del proyecto (ideas.md y hoja_de_ruta.txt)
-
-## Por implementar – CRÍTICAS
-- Página de inicio accesible desde navegador
 - Página de detalle de tutorial accesible mediante URL
 - Carga de tutoriales desde archivos Markdown
 - Renderizado de contenido Markdown en HTML
-- Navegación básica entre inicio y tutorial
 - Manejo de error cuando un tutorial no existe
-- Al menos un tutorial de ejemplo funcional
+- Tutorial de ejemplo funcional
+
+## Por implementar – CRÍTICAS
+- Página de inicio con listado funcional de tutoriales
+- Navegación clara inicio ↔ tutorial
 
 ## Por implementar – NO CRÍTICAS
 - Auto-listado dinámico de tutoriales sin editar HTML
@@ -23,4 +23,5 @@
 - Sistema de etiquetas o categorías
 - Buscador de tutoriales
 - Página “Acerca de”
-- Mejora de SEO básico (meta tags)
+- Mejora de SEO básico
+
