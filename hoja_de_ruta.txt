@@ -10,10 +10,11 @@
 - Renderizado de contenido Markdown en HTML
 - Manejo de error cuando un tutorial no existe
 - Tutorial de ejemplo funcional
+- Página de inicio con listado funcional de tutoriales
+- Navegación básica entre inicio y tutorial
 
 ## Por implementar – CRÍTICAS
-- Página de inicio con listado funcional de tutoriales
-- Navegación clara inicio ↔ tutorial
+- (vacío)
 
 ## Por implementar – NO CRÍTICAS
 - Auto-listado dinámico de tutoriales sin editar HTML
@@ -24,4 +25,3 @@
 - Buscador de tutoriales
 - Página “Acerca de”
 - Mejora de SEO básico
-
