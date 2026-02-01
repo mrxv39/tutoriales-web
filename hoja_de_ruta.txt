@@ -1,9 +1,6 @@
 # Hoja de ruta – tutoriales-web
 
-Tiempo total web: 
-
-
-## Implementado
+## Implementado (14)
 - Estructura base del proyecto
 - Servidor estático con Node.js y Express
 - Repositorio GitHub inicializado y configurado
@@ -11,20 +8,30 @@ Tiempo total web:
 - Página de detalle de tutorial accesible mediante URL
 - Carga y renderizado de tutoriales desde archivos Markdown
 - Manejo de error cuando un tutorial no existe
-- Publicación de tutoriales de productividad
-
-## Por implementar – CRÍTICAS
+- Categorías visibles en la home
+- Sustitución del color de acento por rgb(86, 156, 214)
+- Tiempo de lectura estimado en cada tutorial
 - Eliminación del tutorial "Introducción a HTML"
-- Sustitución del color verde actual por rgb(86, 156, 214)
-- Definición y visualización de categorías para los tutoriales existentes
-- Indicación del tiempo de lectura estimado en cada tutorial
+- Publicación del tutorial de apps de productividad
+- Auto-listado de tutoriales desde manifest JSON
+- Deploy a Fly.io
 
-## Por implementar – NO CRÍTICAS
-- Sistema de registro de emails para avisos de nuevos tutoriales
-- Selección de temas de interés en el registro de emails
-- Sistema para recibir solicitudes y sugerencias de nuevos tutoriales
-- Marcado visual de cada tutorial como tarea amarilla
-- Mini test asociado a cada tutorial
-- Envío diferido del mini test para reforzar retención
+## Por implementar – CRÍTICAS (4)
+- Definición y visualización del lema principal de la web
+- Tutorial sobre sistema de clasificación de tareas
+- Tutorial de uso básico de inteligencia artificial
+- Tutorial de inteligencia artificial aplicada a programación
+
+## Por implementar – NO CRÍTICAS (12)
+- Newsletter semanal para generar confianza con los lectores
+- Sistema de registro de emails
+- Página de reflexiones/artículos de opinión
+- Herramienta interactiva: “¿Cómo clasifico esta tarea?” basada en ChatGPT
+- Contador visible del tiempo dedicado a diseñar la web y cada tutorial
+- Tutorial/documental: creación de esta web grabada en vídeo
+- Página “Acerca de”
+- Mejora de SEO básico
+- Soporte para imágenes dentro de tutoriales
+- Soporte para vídeos embebidos
+- Buscador de tutoriales
 - Integración de BTCPayServer para aceptar donaciones en Bitcoin
-
