@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Plan - Tutoriales Web</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Mi Plan de Aprendizaje</h1>
+    <nav>
+      <a href="perfil.html">← Volver a mi perfil</a>
+    </nav>
+  </header>
+  
+  <main>
+    <article id="plan-content" style="max-width: 700px; margin: 0 auto;">
+      <p>Cargando plan...</p>
+    </article>
+  </main>
+  
+  <footer>
+    <p>&copy; 2026 Tutoriales Web</p>
+  </footer>
+
+  <script>
+    // Check if user profile and onboarding exist
+    if (!localStorage.getItem('user_profile')) {
+      window.location.href = 'registro.html';
+    } else if (!localStorage.getItem('user_onboarding')) {
+      window.location.href = 'onboarding.html';
+    } else {
+      // Load onboarding data
+      const onboardingData = JSON.parse(localStorage.getItem('user_onboarding'));
+      const userAreas = onboardingData.areas_to_improve || [];
+      
+      // Fetch tutorials and build plan
+      fetch('/tutoriales/index.json')
+        .then(response => response.json())
+        .then(tutorials => {
+          const content = document.getElementById('plan-content');
+          
+          // Match tutorials by categories
+          const matchedTutorials = tutorials.filter(tutorial => {
+            return tutorial.categories.some(cat => userAreas.includes(cat));
+          });
+          
+          // Fill with others if not enough matches
+          let recommendedTutorials = matchedTutorials;
+          if (recommendedTutorials.length < 3) {
+            const remaining = tutorials.filter(t => !matchedTutorials.includes(t));
+            recommendedTutorials = [...matchedTutorials, ...remaining].slice(0, 6);
+          } else {
+            recommendedTutorials = recommendedTutorials.slice(0, 6);
+          }
+          
+          if (recommendedTutorials.length === 0) {
+            content.innerHTML = `
+              <p style="color: #666;">Aún no hay tutoriales disponibles para tus áreas de interés.</p>
+              <button onclick="window.location.href='perfil.html'" style="margin-top: 1rem; padding: 0.7rem 1.5rem; background: rgb(86, 156, 214); color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: 600;">
+                Volver a mi perfil
+              </button>
+            `;
+            return;
+          }
+          
+          content.innerHTML = `
+            <div style="background: #f4f4f4; padding: 1rem; border-radius: 5px; margin-bottom: 1.5rem;">
+              <p style="margin: 0; color: #666; font-size: 0.95rem;">
+                Este plan es una propuesta inicial basada en tus intereses. Ajusta cuando quieras.
+              </p>
+            </div>
+            
+            <h2 style="margin-bottom: 1rem; color: rgb(86, 156, 214);">Tutoriales recomendados</h2>
+            
+            <ul style="list-style: none; padding: 0;">
+              ${recommendedTutorials.map(tutorial => `
+                <li style="padding: 1rem; margin-bottom: 1rem; background: #f4f4f4; border-radius: 5px;">
+                  <a href="tutorial.html?slug=${tutorial.slug}" style="text-decoration: none;">
+                    <strong style="color: rgb(86, 156, 214); font-size: 1.1rem;">${tutorial.title}</strong>
+                  </a>
+                  <div style="margin: 0.5rem 0; display: flex; gap: 0.4rem; flex-wrap: wrap;">
+                    ${tutorial.categories.map(cat => 
+                      `<span style="display: inline-block; padding: 0.2rem 0.5rem; background: ${userAreas.includes(cat) ? '#e8f4fd' : '#e0e0e0'}; color: ${userAreas.includes(cat) ? 'rgb(86, 156, 214)' : '#666'}; border-radius: 3px; font-size: 0.75rem;">${cat}</span>`
+                    ).join('')}
+                    ${tutorial.dev_time ? `<span style="display: inline-block; padding: 0.2rem 0.5rem; background: #f5f5f5; color: #666; border-radius: 3px; font-size: 0.75rem; margin-left: 0.2rem;">Tiempo de desarrollo: ${tutorial.dev_time}</span>` : ''}
+                  </div>
+                  <p style="margin: 0.5rem 0 0 0; color: #666; font-size: 0.9rem;">${tutorial.description}</p>
+                </li>
+              `).join('')}
+            </ul>
+            
+            <button onclick="window.location.href='perfil.html'" style="width: 100%; padding: 0.7rem; background: rgb(86, 156, 214); color: white; border: none; border-radius: 4px; font-size: 1rem; cursor: pointer; font-weight: 600; margin-top: 1rem;">
+              Volver a mi perfil
+            </button>
+          `;
+        })
+        .catch(error => {
+          document.getElementById('plan-content').innerHTML = `
+            <p style="color: #d9534f;">Error al cargar los tutoriales. Por favor, intenta más tarde.</p>
+            <button onclick="window.location.href='perfil.html'" style="margin-top: 1rem; padding: 0.7rem 1.5rem; background: rgb(86, 156, 214); color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: 600;">
+              Volver a mi perfil
+            </button>
+          `;
+        });
+    }
+  </script>
+</body>
+</html>

@@ -17,6 +17,13 @@
   </header>
   
   <main>
+    <div id="onboarding-banner" style="display: none; background: #fff3cd; padding: 1rem; border-radius: 5px; margin-bottom: 1.5rem; border-left: 4px solid rgb(86, 156, 214);">
+      <p style="margin: 0; color: #856404;">
+        <strong>¡Personaliza tu experiencia!</strong> 
+        <a href="onboarding.html" style="color: rgb(86, 156, 214); font-weight: 600; text-decoration: underline;">Completa tu cuestionario</a> para tener tu plan de aprendizaje.
+      </p>
+    </div>
+    
     <section>
       <h2>Categorías</h2>
       <div class="categories">
@@ -42,10 +49,16 @@
     // Update profile link based on localStorage
     const profileLink = document.getElementById('profile-link');
     const userProfile = localStorage.getItem('user_profile');
+    const userOnboarding = localStorage.getItem('user_onboarding');
     
     if (userProfile) {
       profileLink.textContent = 'Mi perfil';
       profileLink.href = 'perfil.html';
+      
+      // Show onboarding banner if profile exists but no onboarding
+      if (!userOnboarding) {
+        document.getElementById('onboarding-banner').style.display = 'block';
+      }
     } else {
       profileLink.textContent = 'Crear perfil';
       profileLink.href = 'registro.html';

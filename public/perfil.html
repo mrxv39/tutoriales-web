@@ -34,7 +34,39 @@
     } else {
       // Profile exists, display it
       const profile = JSON.parse(profileData);
+      const onboardingData = localStorage.getItem('user_onboarding');
       const content = document.getElementById('profile-content');
+      
+      let onboardingSection = '';
+      
+      if (onboardingData) {
+        const onboarding = JSON.parse(onboardingData);
+        onboardingSection = `
+          <div style="background: #e8f4fd; padding: 1.5rem; border-radius: 5px; margin-bottom: 1.5rem;">
+            <h3 style="margin-bottom: 1rem; color: rgb(86, 156, 214); font-size: 1.1rem;">Tu cuestionario</h3>
+            <p style="margin-bottom: 0.5rem;"><strong>Nivel:</strong> ${onboarding.skill_level}</p>
+            <p style="margin-bottom: 0.5rem;"><strong>Áreas de interés:</strong> ${onboarding.areas_to_improve.join(', ')}</p>
+            <p style="margin-bottom: 0.5rem;"><strong>Tiempo semanal:</strong> ${onboarding.weekly_time}</p>
+            <div style="display: flex; gap: 0.5rem; margin-top: 1rem; flex-wrap: wrap;">
+              <button onclick="window.location.href='plan.html'" style="padding: 0.5rem 1rem; background: rgb(86, 156, 214); color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: 600; font-size: 0.9rem;">
+                Ver mi plan
+              </button>
+              <button onclick="window.location.href='onboarding.html'" style="padding: 0.5rem 1rem; background: white; color: rgb(86, 156, 214); border: 2px solid rgb(86, 156, 214); border-radius: 4px; cursor: pointer; font-weight: 600; font-size: 0.9rem;">
+                Editar cuestionario
+              </button>
+            </div>
+          </div>
+        `;
+      } else {
+        onboardingSection = `
+          <div style="background: #fff3cd; padding: 1.5rem; border-radius: 5px; margin-bottom: 1.5rem;">
+            <p style="margin-bottom: 1rem; color: #856404;">Completa tu cuestionario para obtener un plan personalizado.</p>
+            <button onclick="window.location.href='onboarding.html'" style="padding: 0.7rem 1.5rem; background: rgb(86, 156, 214); color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: 600;">
+              Completar cuestionario
+            </button>
+          </div>
+        `;
+      }
       
       content.innerHTML = `
         <div style="background: #f4f4f4; padding: 1.5rem; border-radius: 5px; margin-bottom: 1.5rem;">
@@ -42,6 +74,8 @@
           <p style="margin-bottom: 0.5rem;"><strong>Email:</strong> ${profile.email}</p>
           <p style="color: #666; font-size: 0.9rem;">Perfil creado: ${new Date(profile.created_at_iso).toLocaleDateString('es-ES')}</p>
         </div>
+        
+        ${onboardingSection}
         
         <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
           <button id="edit-btn" style="flex: 1; padding: 0.7rem; background: rgb(86, 156, 214); color: white; border: none; border-radius: 4px; font-size: 1rem; cursor: pointer; font-weight: 600;">
@@ -62,6 +96,7 @@
       document.getElementById('delete-btn').addEventListener('click', function() {
         if (confirm('¿Estás seguro de que quieres borrar tu perfil?')) {
           localStorage.removeItem('user_profile');
+          localStorage.removeItem('user_onboarding');
           window.location.href = 'index.html';
         }
       });
