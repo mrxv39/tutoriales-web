@@ -5,6 +5,7 @@ News leeter semanal para generar confianza.
 Procastinador pro
 Inviertes o te empobreces?
 Si no mejoras empeoras
+Pagas el impuesto de la loteria minero domestico? 
 
 
 

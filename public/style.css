@@ -14,7 +14,7 @@ body {
 }
 
 header {
-  background: #4CAF50;
+  background: rgb(86, 156, 214);
   color: white;
   padding: 1rem;
   margin-bottom: 2rem;
@@ -62,7 +62,7 @@ main {
 }
 
 .tutorial-list li a strong {
-  color: #4CAF50;
+  color: rgb(86, 156, 214);
   font-size: 1.1rem;
 }
 
@@ -83,11 +83,43 @@ article {
 
 article h2 {
   margin-bottom: 1rem;
-  color: #4CAF50;
+  color: rgb(86, 156, 214);
 }
 
 article p {
   margin-bottom: 1rem;
+}
+
+.categories {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.category-tag {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  background: rgb(86, 156, 214);
+  color: white;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.tutorial-tags {
+  display: flex;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+}
+
+.tutorial-tags .tag {
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  background: #e8f4fd;
+  color: rgb(86, 156, 214);
+  border-radius: 3px;
+  font-size: 0.75rem;
+  font-weight: normal;
 }
 
 footer {
